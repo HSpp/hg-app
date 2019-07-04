@@ -1,17 +1,16 @@
 <template>
   <div id="app">
+		<pageTitle></pageTitle>
     <router-view></router-view>
   </div>
 </template>
 <script>
+	import pageTitle from './components/pageTitle'
 	export default{
-		data(){
-			return{
-				selected:true
-			}
-		}
+		components:{pageTitle}
 	}
 </script>
+
 
 <style lang="less">
 #app {

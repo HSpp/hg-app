@@ -1,9 +1,6 @@
 <template>
 	<div>
 		
-		<div>
-			<router-view></router-view>
-		</div>
 		<mt-tabbar v-model="selected" class='customTabbar' fixed>
 			<mt-tab-item id="tab1" @click.native='jumpRoute("home")'>
 				
@@ -31,7 +28,9 @@
 </template>
 
 <script>
+	
 	export default {
+		
 		data() {
 			return {
 				selected: 'tab1'

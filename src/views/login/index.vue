@@ -3,11 +3,6 @@
 		<div class="bg">
 			<img src="../../assets/build.png" alt="">
 		</div>
-		<mt-header title="登录" class="customHeader whiteTitle" fixed>
-			<router-link to='/' slot="left">
-				<span class="iconfont icon-right"></span>
-			</router-link>
-		</mt-header>
 		<div class="logo">
 			<img src="@/assets/logo.png" alt="">
 		</div>
