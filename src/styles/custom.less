@@ -1,0 +1,162 @@
+@import './font/iconfont.css';
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_1267559_cemubkpkm8t.eot?t=1561771588672'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_1267559_cemubkpkm8t.eot?t=1561771588672#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAKYAAsAAAAABkQAAAJNAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcApQaAE2AiQDCAsGAAQgBYRtBzAbjgURBXTJviiwm4kzUMUu9wGDBuqzqm4JZ+AQb6o6yPMgHr7W0Pdv9yCEClFlosMaUJGrquz4WiBhqnRryQNKYOEuxb94POC8fnJdmzKnJ4au6l2t6U7iLsJErg48yWhABa3Cg70H3t/S+DpdpSpkhazQ9Yl7p3/Sx3/+W++8y3UPGmvSpC7AOJAC2hujyIok8oaxC1zCYwKdJqyJ/e35Bo3MWhWI23mqocmFZZnlGqGqOZjFUyg1xb3RGzwJvx+/rEdDoUyshqNbGwfb39gF6e5/XPoERAjoeImENWTirDZ9IAnGJ53pbIZ91QbftK3vEnu1C/bXWdXdYAxmgm9c1a3KFyAzmn5Mj5pMylV1o615MDefuzc7pv3/p7cvvw1+3zzqORWeedMfkm3QLn1L2xAIetd6cV83zOB9X9dhsF3Wz0uzH0/wP5Q9e7KutpxFVpW1+UK/dJ6mTp1ogf2Dvoy1jJw8Hxojt+CtjadIGnNkZtdQ6rKBSgPdgrJqd3xiCBuL3AHMfAGEft8o9HqOpN8PmdlflEb9odIfY3S6CC7sshC5kkkLOTSfmNu28Y5bVFR7ofS10pxVh6J74iGPYRxExdyOGuI5tgxvaSLi0XNb4xY8R1XVYsdtQVaCTKRbhaGve1Ng2xqUPYxogjjI+IRyVqvh/cFClT5/QVKvKhq3dNUU7xE2yMdHsUDUg9wZml5d9/LK4E0qIYSHPNaqoS2YRyqVFurq5xWIJQLZiGRnJbT7+b6GYH1T/XWHAFAs6yjsWUl159VSkwIAAA==') format('woff2'),
+  url('//at.alicdn.com/t/font_1267559_cemubkpkm8t.woff?t=1561771588672') format('woff'),
+  url('//at.alicdn.com/t/font_1267559_cemubkpkm8t.ttf?t=1561771588672') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_1267559_cemubkpkm8t.svg?t=1561771588672#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tuceng:before {
+  content: "\e7e2";
+}
+
+.icon-jiemao:before {
+  content: "\e62e";
+}
+
+
+body{
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+.mint-tabbar.customTabbar > .mint-tab-item.is-selected{
+	background-color: transparent;
+	color: #1F5FF2 ;
+}
+.customHeader.mint-header{
+	background-color: #F6F6F8;
+	.mint-header-title{
+		color: #000;
+		font-size: 18px;
+		font-weight: 700;
+	}
+	&.whiteTitle{
+		background-color: transparent;
+		.mint-header-title{
+			color: #fff;
+		}
+		.iconfont{
+			color: #fff;
+		}
+		
+	}
+	&.border{
+		box-shadow: 0 0 0 0 rgba(0,0,0,0.25);
+		.iconfont{
+			color:#8D919A;
+		}
+		
+	}
+	.mint-button-text{
+		color: #000;
+	}
+	.loginBtn{
+		width: 24px;
+		height: 24px;
+		text-align: center;
+		line-height: 23px;
+		background: #A6ABB8;
+		border-radius: 50%;
+		border: 1px solid #A6ABB8 ;
+		
+	}
+	.iconfont{
+		color: #fff;
+		font-size: 20px;
+		
+		
+	}
+}
+input.custom{
+	outline: none;
+	width: 100%;
+	&::-webkit-input-placeholder{/*Webkit browsers*/
+		font-size: 14px;
+		color: #C8CACC;
+	}
+	&:-moz-placeholder{/*Mozilla Firefox 4 to 8*/
+		font-size: 14px;
+		color: #C8CACC;
+	}
+	&::moz-placeholder{/*Mozilla Firefox 19+*/
+		font-size: 14px;
+		color: #C8CACC;
+	}
+	&:-ms-input-placeholder{/*Internet Explorer 10+*/
+		font-size: 14px;
+		color: #C8CACC;
+	}
+}
+.customBtn.mint-button--primary{
+	background-image: linear-gradient(-135deg, #1F5FF2 0%, #4DA1FF 100%);
+	
+}
+.customNavbar.mint-navbar {
+	border-top:1px solid #A6ABB8;
+	 border-bottom: 1px solid #A6ABB8;
+	.mint-tab-item{
+		color: #000;
+		font-size: 16px;
+		border-left:1px solid #A6ABB8;
+		 &:first-child{
+			 border-left: 0;
+		 }
+		
+		&.is-selected{
+			border-bottom: 0;
+			color: #fff;
+			margin-bottom:0;
+			background: linear-gradient(-135deg,#1F5FF2  0%, #4DA1FF 100%);
+		}
+		
+	}
+}
+.customTable{
+	// min-width: 800px;
+	border: 1px solid  #A6ABB8;
+	margin: 20px 10px 0 10px;
+	overflow: auto;
+	>table{
+		width: 600px;
+		border-collapse: collapse;
+		thead{
+			background: #8D919A;
+			th{
+				color: #fff;
+				text-align: center;
+				padding: 15px 0px;
+				font-size: 14px;
+				border-right:1px solid #ddd;
+				&:last-child{
+					border: none;
+				}
+			}
+			
+		}
+		tbody{
+			tr:nth-child(odd){
+				background: #F5F5F5;
+			}
+			td{
+				padding: 10px 0;
+				border-right:1px solid #ddd;
+				
+				&:last-child{
+					border: none;
+				}
+			}
+		}
+	}
+}

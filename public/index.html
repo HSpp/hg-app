@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+		<title>vue-bootstrap</title>
+	</head>
+	<body>
+		<noscript>
+			<strong>We're sorry but vue-bootstrap doesn't work properly without JavaScript enabled. Please enable it to
+				continue.</strong>
+		</noscript>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+	</body>
+	<script type="text/javascript">
+		if (window.plus) {
+			plusReady();
+			// alert(window.plus)
+		} else {
+			document.addEventListener("plusready", plusReady, false);
+		}
+		// 扩展API准备完成后要执行的操作
+		function plusReady() {
+			var ws = plus.webview.currentWebview(); //pw回车可输出plus.webview
+			// ... code
+			// alert('这是ready')
+			// alert(window.plus)
+		}
+	</script>
+</html>
