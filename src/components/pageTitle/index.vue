@@ -1,12 +1,10 @@
 <template>
 	<div >
 		<mt-header :title="title" class="customHeader" :class='{gray:isGray}' fixed>
-			<div class="loginBtn"  v-if="isBack" slot="left" @click="login">
+			<div class="loginBtn"  v-if="isLogin" slot="left" @click="login">
 				<span class="iconfont icon-yonghuming"  ></span>
 			</div>
-			
-			
-			<span class="iconfont icon-right" v-else slot="left"  @click="back" ></span>
+			<span class="iconfont icon-right"  v-if="isBack" slot="left"  @click="back" ></span>
 			
 			
 		</mt-header>
@@ -14,24 +12,26 @@
 </template>
 
 <script>
+	
 	export default{
 		props:{
 			title:{
 				default:'首页'
 			},
 			isBack:{
-				default:true
+				default:false
 			},
 			isGray:{
 				default:true
-			}
-			
-			
-			
-			
+			},
+			isLogin:{
+				default:true
+			}	
 		},
+		
 		methods:{
 			login(){
+				
 				this.$router.push({name:"login"})
 			},
 			back(){

@@ -35,13 +35,13 @@ a{
 	background: #F6F6F8;
 	> .mint-tab-item{
 		.iconfont{
-			font-size: 24px;
-			color: rgba(0,0,0,.6);
+			font-size: 20px;
+			color: rgba(0,0,0,.5);
 			
 		}
 		.mint-tab-item-label{
 			font-size: 14px;
-			color: rgba(0,0,0,.6);
+			color: rgba(0,0,0,.5);
 		}
 		&.is-selected{
 			background: transparent;
@@ -59,13 +59,18 @@ a{
 }
 
 .customHeader.mint-header{
-	background-color: #F6F6F8;
+	background-color: transparent;
+	height: 50px;
 	.mint-header-title{
-		color: #000;
-		font-size: 24px;
+		color: #fff;
+		font-size: 20px;
 		font-weight: 700;
 	}
 	&.gray{
+		background-color: #F6F6F8;
+		.mint-header-title{
+			color: #000;
+		}
 		.loginBtn{
 			width: 24px;
 			height: 24px;
@@ -74,7 +79,14 @@ a{
 			background: #A6ABB8;
 			border-radius: 50%;
 			border: 1px solid #A6ABB8 ;
+			.iconfont{
+				color: #fff;
+			}
 			
+		}
+		
+		.iconfont{
+			color: #8D919A;
 		}
 	}
 	&.whiteTitle{
@@ -100,7 +112,7 @@ a{
 	
 	.iconfont{
 		color: #fff;
-		font-size: 24px;
+		font-size: 20px;
 		
 		
 	}
@@ -128,6 +140,11 @@ input.custom{
 .customBtn.mint-button--primary{
 	background-image: linear-gradient(-135deg, #1F5FF2 0%, #4DA1FF 100%);
 	
+}
+.customBtn.mint-button--default{
+	background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
 }
 .customNavbar.mint-navbar {
 	border-top:1px solid #A6ABB8;

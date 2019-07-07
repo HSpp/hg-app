@@ -1,8 +1,5 @@
 <template>
-	<div>
-		<mt-header title="搜索" class="customHeader border" fixed>
-			
-		</mt-header>
+	<div>	
 		<div class="searchBox">
 			<div class="searchInput">
 				<input type="text" class="custom" placeholder="请输入展品中文名称,报关单号" />
@@ -117,7 +114,7 @@
 
 <style scoped lang="less">
 	.searchBox {
-		padding: 0 10px;
+		padding: 20px 10px 0 10px;
 		
 
 		.searchInput {

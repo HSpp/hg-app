@@ -1,12 +1,6 @@
 <template>
 	<div>
-		<mt-header title="首页" class="customHeader" fixed>
-			<div class="loginBtn" slot="left" @click="login" >
-				<span class="iconfont icon-yonghuming"></span>
-			</div>
-			
-			
-		</mt-header>
+		<h1>this is homePage!</h1>
 	</div>
 </template>
 

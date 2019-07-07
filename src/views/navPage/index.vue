@@ -1,6 +1,6 @@
 <template>
 	<div>
-		
+		<router-view></router-view>
 		<mt-tabbar v-model="selected" class='customTabbar' fixed>
 			<mt-tab-item id="tab1" @click.native='jumpRoute("home")'>
 				

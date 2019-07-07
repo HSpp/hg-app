@@ -1,10 +1,5 @@
 <template>
 	<div>
-		<mt-header title="搜索结果" class="customHeader border" fixed>
-			<router-link to='/' slot="left">
-				<span class="iconfont icon-right"></span>
-			</router-link>
-		</mt-header>
 		<div class="box">
 			<div class="item">
 				<div class="label">展品名称:</div>
