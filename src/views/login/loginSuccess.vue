@@ -3,11 +3,6 @@
 		<div class="bg">
 			<img src="../../assets/build.png" alt="">
 		</div>
-		<mt-header :title="userName" class="customHeader whiteTitle" fixed>
-			<router-link to='/' slot="left">
-				<span class="iconfont icon-right"></span>
-			</router-link>
-		</mt-header>
 		<div class="logo">
 			<img src="@/assets/logo.png" alt="">
 		</div>
@@ -22,7 +17,7 @@
 					<div class="value">检员</div>
 				</div>
 				<div class="submit">
-					<mt-button size='large' class='customBtn' type="primary" @click='test'>退出登录</mt-button>
+					<mt-button size='large' class='customBtn' type="primary" @click='loginOutHandle'>退出登录</mt-button>
 				</div>
 				
 			</div>
@@ -33,6 +28,7 @@
 
 <script>
 	import customInput from '@/components/customInput'
+    import {mapActions} from 'vuex'
 	export default {
 		components: {
 			customInput
@@ -54,11 +50,12 @@
 			}
 		},
 		methods: {
-			input(e, type) {
-				this.form[type] = e
-			},
-			test() {
-				console.log('awdas', this.form)
+            ...mapActions(['loginOut']),
+            async loginOutHandle() {
+                let res=await this.loginOut()
+				if(res){
+                    this.$router.push({name:'home'})
+				}
 			}
 		}
 	}

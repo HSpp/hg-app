@@ -1,4 +1,4 @@
-import Vue from 'vue'
+ import Vue from 'vue'
 import Router from 'vue-router'
 const navPage = () => import('@/views/navPage')
 const login = () => import('@/views/login')
@@ -109,7 +109,7 @@ export default new Router({
 			name: 'loginSuccess',
 			component: loginSuccess,
 			meta:{
-				title:"登录",
+				title:"个人信息",
 				isGray:false,
 				isBack:true,
 				isLogin:false

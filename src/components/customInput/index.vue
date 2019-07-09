@@ -4,7 +4,7 @@
 		<input class="custom" @input="handleInput" ref="input" :placeholder="placeholder" :type="textType" @focus="active=true" @blur="active=false">
 		
 		<slot name='imgCode'></slot>
-		<span v-if="textType=='password'" @click="showPassword" class="iconfont icon-jiemao"></span>
+		<!--<span v-if="textType=='password'" @click="showPassword" class="iconfont icon-jiemao"></span>-->
 	</div>
 </template>
 

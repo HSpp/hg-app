@@ -12,7 +12,7 @@
 </template>
 
 <script>
-	
+    import { mapGetters } from 'vuex'
 	export default{
 		props:{
 			title:{
@@ -28,11 +28,15 @@
 				default:true
 			}	
 		},
+        computed:{
+            ...mapGetters(['vuexUserInfor'])
+        },
 		
 		methods:{
 			login(){
-				
-				this.$router.push({name:"login"})
+				let {token}=this.vuexUserInfor,path;
+				token? path='loginSuccess':path='login';
+				this.$router.push({name:path})
 			},
 			back(){
 				this.$router.back(-1)
