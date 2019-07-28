@@ -168,7 +168,7 @@ l-50 44 -61 -62z"></path>
 		data(){
 			return{
 				floor:true,
-				currentFloor:floorTwo
+				currentFloor:floorOne
 			}
 		},
 		methods:{

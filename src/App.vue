@@ -16,9 +16,16 @@
 				title:'登录',
 				isGray:true,
 				isBack:false,
-				isLogin:true
+				isLogin:true,
+				isNav:false,
+				first:null
 				
 			}
+			
+		},
+		mounted(){
+			this.backButton()
+			
 			
 		},
 		computed:{
@@ -29,13 +36,46 @@
 		},
 		methods: {
 			getPath() {
-				let {title,isGray,isBack,isLogin}=this.$route.meta
+				let {title,isGray,isBack,isLogin,isNav}=this.$route.meta
 				this.title=title||this.vuexTitle
 				this.isGray=isGray
 				this.isBack=isBack
-				this.isLogin=isLogin
+				this.isLogin=isLogin;
+				this.isNav=isNav;
+				
+			},
+			backButton(){
+				if (window.plus) {
+					this.plusready();
+					// alert(window.plus)
+				} else {
+					document.addEventListener("plusready", this.plusready, false);
+				}
+			},
+			plusready(){
+				var that = this;
+				plus.key.addEventListener('backbutton', function() {
+					if(that.isNav){
+						if(!that.first){
+							that.first = new Date().getTime();
+							setTimeout(function() {
+								that.first = null;
+							}, 1600);
+							
+						}else{
+							if (new Date().getTime() - that.first > 1500) {
+								plus.runtime.quit();
+							}	
+						}
+					}else{
+						that.first = null;
+						that.$router.back(-1);
+					}
+					
+				}, false);
 				
 			}
+			
 		}
 	}
 </script>

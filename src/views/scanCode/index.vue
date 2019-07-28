@@ -1,7 +1,5 @@
 <template>
 	<div>
-		
-		
 		<div class="mui-content">
 			<div class="scan">
 				<div id="bcid">
@@ -10,7 +8,6 @@
 				</div>
 				<footer>
 					<mt-button type="default" @click="startScan" v-show="isShow">取消</mt-button>
-				
 					<mt-button type="default" @click="cancelScan">取消</mt-button>
 				</footer>
 			</div>
@@ -18,18 +15,13 @@
 	</div>
 </template>
 
-<script >
+<script>
 	let scan = null;
 	//点手机虚拟返回键
-	document.addEventListener("plusready", function() {
-		// 注册返回按键事件
-		plus.key.addEventListener('backbutton', function() {
-			// 事件处理
-			scan.close(); //关闭条码识别控件
-			window.history.back();
-		}, false);
-	});
 
+	import {
+		mapMutations
+	} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -38,13 +30,35 @@
 			}
 		},
 		mounted() {
+			let that = this;
+			document.addEventListener("plusready", function() {
+				var webview = plus.webview.currentWebview();
+				// 注册返回按键事件
+				plus.key.addEventListener('backbutton', function() {
+					
+					webview.canBack(function(e) {
+						if (e.canBack) {
+							scan.close();
+							that.set_tabSelected('tab1')
+							that.$router.push({
+								name: 'home'
+							})
+						}
+					})
+
+					 //关闭条码识别控件
+					
+					
+				}, false);
+			});
 			this.startScan() //进入页面就调取扫一扫
 		},
 		methods: {
 			//创建扫描控件
+			...mapMutations(['set_tabSelected']),
 			startRecognize() {
 				let that = this;
-				if(!window.plus) return;
+				if (!window.plus) return;
 				that.isShow = false;
 				// 创建条码扫描识别控件
 				scan = new plus.barcode.Barcode('bcid');
@@ -52,7 +66,7 @@
 				scan.onmarked = onmarked;
 
 				function onmarked(type, result, file) {
-					switch(type) {
+					switch (type) {
 						case plus.barcode.QR:
 							type = 'QR';
 							break;
@@ -71,14 +85,14 @@
 					alert(result);
 					scan.cancel(); //关闭扫描
 					scan.close(); //关闭条码识别控件
-					if(that.codeUrl) {
+					if (that.codeUrl) {
 						that.isShow = true
 					}
 				}
 			},
 			//开始扫描
 			startScan() {
-				if(!window.plus) return;
+				if (!window.plus) return;
 				this.startRecognize() //创建控件
 				scan.start();
 			},
@@ -100,11 +114,11 @@
 		margin-top: 60px;
 		/*px*/
 	}
-	
+
 	.scan {
 		height: 100%;
 	}
-	
+
 	.scan #bcid {
 		width: 100%;
 		position: absolute;
@@ -117,7 +131,7 @@
 		color: #fff;
 		background: #ccc;
 	}
-	
+
 	.scan footer {
 		position: absolute;
 		left: 50%;
@@ -130,13 +144,13 @@
 		display: flex;
 		justify-content: center;
 	}
-	
+
 	.scan footer button {
 		width: 45%;
 		font-size: 30px;
 		/*px*/
 	}
-	
+
 	.clickBtn,
 	.cancelBtn {
 		margin-top: 20px;
@@ -148,7 +162,7 @@
 		text-align: center;
 		;
 	}
-	
+
 	.cancelBtn {
 		margin-left: 20px;
 		/*px*/

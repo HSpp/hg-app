@@ -29,7 +29,8 @@ export default new Router({
 					component: home,
 					meta:{
 						title:"首页",
-						isGray:true
+						isGray:true,
+						isNav:true
 					},
 					
 				},
@@ -41,7 +42,8 @@ export default new Router({
 						title:"搜索",
 						isGray:true,
 						isBack:false,
-						isLogin:false
+						isLogin:false,
+						isNav:true
 					}
 				},
 				{
@@ -52,7 +54,8 @@ export default new Router({
 						title:"展位图",
 						isGray:true,
 						isBack:false,
-						isLogin:false
+						isLogin:false,
+						isNav:true
 					}
 				},
 				

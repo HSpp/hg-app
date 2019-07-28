@@ -27,7 +27,7 @@ export default new Vuex.Store({
             token:'4464f308-974a-4f37-b00b-f85b5dc4b885'
         },
         //tab下标
-        tabSelected:''
+        tabSelected:'tab1'
 
     },
     getters: {
@@ -43,7 +43,6 @@ export default new Vuex.Store({
             state.userInfor={...infor}
         },
         set_tabSelected(state,val){
-            console.log(val)
              state.tabSelected=val
         }
 

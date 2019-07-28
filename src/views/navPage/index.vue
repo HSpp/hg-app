@@ -32,18 +32,26 @@
 		
 		data() {
 			return {
-				selected: 'tab1'
+				selected: 'tab1',
+				
 			}
 		},
         computed:{
             ...mapGetters(['vuexTabSelected'])
         },
+		
+			
 		methods:{
             ...mapMutations(['set_tabSelected']),
 			jumpRoute(path,tabName){
 			    this.set_tabSelected(tabName)
 				this.$router.push({name:path})
 			}
+			
+		},
+		beforeDestroy(){
+			 console.log('组件准备销毁')
+			// plus.key.removeEventListener('backbutton',this.plusready)
 		}
 	}
 </script>
